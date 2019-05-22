@@ -1,4 +1,8 @@
 import { createStore } from 'redux';
+import {
+  createPost,
+  deletePost
+} from '../actions/postActions';
 
 const initialState = {
   posts: []
@@ -17,9 +21,8 @@ export default function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
-store.dispatch({
-  type: 'CREATE_POST',
-  payload: 'blog about a thing'
-});
- 
-console.log(store.getState());
+store.dispatch(createPost('thing about a thing'));
+console.log('after post', store.getState());
+
+store.dispatch(deletePost('thing about a thing'));
+console.log('after delete post', store.getState());
