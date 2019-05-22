@@ -1,13 +1,22 @@
 
 import { createStore } from 'redux';
+import {
+  addDrink,
+  removeDrink,
+  addSandwich,
+  removeSandwich,
+  addChips,
+  removeChips
+} from './actions/lunchActions';
 
 const initialState = {
-  drinks: '',
-  sandwiches: '',
-  chips: ''
+  drinks: [],
+  sandwiches: [],
+  chips: []
 };
 
 function reducer(state = initialState, action) {
+  
   switch(action.type) {
     case 'ADD_DRINK': 
       return { ...state, drinks: [...state.drinks, action.payload] };
@@ -16,7 +25,7 @@ function reducer(state = initialState, action) {
     case 'ADD_SANDWICH': 
       return { ...state, sandwiches: [...state.sandwiches, action.payload] };
     case 'REMOVE_SANDWICH':
-      return { ...state, sandwich: state.sandwiches.filter(sandwich => sandwich !== action.payload) };
+      return { ...state, sandwiches: state.sandwiches.filter(sandwich => sandwich !== action.payload) };
     case 'ADD_CHIPS': 
       return { ...state, chips: [...state.chips, action.payload] };
     case 'REMOVE_CHIPS':
@@ -28,55 +37,19 @@ function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
-console.log('before anything', store.getState());
 
-store.dispatch({
-  type: 'ADD_DRINK',
-  payload: 'soder'
-});
+store.dispatch(addDrink('pop'));
+store.dispatch(addDrink('soda'));
+store.dispatch(removeDrink('pop'));
+console.log('drinks', store.getState());
 
-console.log('add soder', store.getState());
+store.dispatch(addSandwich('cheese'));
+store.dispatch(addSandwich('turkey'));
+store.dispatch(removeSandwich('cheese'));
+console.log('sandwich', store.getState());
 
-store.dispatch({
-  type: 'ADD_DRINK',
-  payload: 'pop'
-});
+store.dispatch(addChips('fritos'));
+store.dispatch(addChips('doritos'));
+store.dispatch(removeChips('fritos'));
+console.log('chips', store.getState());
 
-console.log('add pop', store.getState());
-
-store.dispatch({
-  type: 'ADD_SANDWICH',
-  payload: 'tuna'
-});
-
-console.log('after tuna', store.getState());
-
-store.dispatch({
-  type: 'REMOVE_DRINK',
-  payload: 'soder'
-});
-store.dispatch({
-  type: 'REMOVE_DRINK',
-  payload: 'soder'
-});
-
-console.log('after remove pop', store.getState());
-
-store.dispatch({
-  type: 'ADD_CHIPS',
-  payload: 'fritos'
-});
-
-store.dispatch({
-  type: 'ADD_CHIPS',
-  payload: 'doritos'
-});
-
-console.log('after adding 2 chips', store.getState());
-
-store.dispatch({
-  type: 'REMOVE_CHIPS',
-  payload: 'fritos'
-});
-
-console.log('after removing fritos', store.getState());
