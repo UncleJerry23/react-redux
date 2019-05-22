@@ -7,9 +7,9 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case 'CREATE_POST':
-      return { state: [...initialState.post, action.payload] };
+      return { state: [...initialState.posts, action.payload] };
     case 'DELETE_POST':
-      return { state: [...initialState.post].filter(post => post !== action.payload) };
+      return { state: [...initialState.posts].filter(post => post !== action.payload) };
     default:
       return state;
   }
@@ -17,5 +17,9 @@ export default function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
-store.
+store.dispatch({
+  type: 'CREATE_POST',
+  payload: 'blog about a thing'
+});
  
+console.log(store.getState());
