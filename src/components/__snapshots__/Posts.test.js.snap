@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Posts component renders a Posts 1`] = `
+<ul>
+  <li>
+    <Post
+      post={
+        Object {
+          "postBody": "things about things",
+          "title": "title1",
+        }
+      }
+    />
+  </li>
+  <li>
+    <Post
+      post={
+        Object {
+          "postBody": "things",
+          "title": "title2",
+        }
+      }
+    />
+  </li>
+  <li>
+    <Post
+      post={
+        Object {
+          "postBody": "things things",
+          "title": "title3",
+        }
+      }
+    />
+  </li>
+  <li>
+    <Post
+      post={
+        Object {
+          "postBody": "about",
+          "title": "title4",
+        }
+      }
+    />
+  </li>
+</ul>
+`;

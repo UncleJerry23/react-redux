@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post component renders a Post 1`] = `
+<Fragment>
+  <h3>
+    myPost
+  </h3>
+  <p>
+    thing i talked about
+  </p>
+</Fragment>
+`;
