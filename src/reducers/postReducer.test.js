@@ -5,17 +5,20 @@ import {
 } from '../actions/postActions';
 
 describe('post reducer', () => {
-  
+
   it('creates a post', () => {
     const initialState = {
       posts: []
     };
 
-    console.log(postReducer(initialState, createPost('bla')));
-
-    expect(postReducer(initialState, createPost('bla'))).toEqual({ 
+    expect(postReducer(initialState, createPost('bla', 'myFirstPost'))).toEqual({ 
       state: {
-        posts: ['bla']
+        posts: [
+          {
+            postBody: 'bla',
+            title: 'myFirstPost'
+          }
+        ]
       } 
     });
   });
@@ -24,8 +27,6 @@ describe('post reducer', () => {
     const initialState = {
       posts: ['bla']
     };
-
-    console.log(postReducer(initialState, deletePost('bla')));
 
     expect(postReducer(initialState, deletePost('bla'))).toEqual({ 
       state: {
