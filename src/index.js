@@ -1,10 +1,7 @@
-import postReducer from './reducers/postReducer';
-import {
-  createPost,
-} from './actions/postActions';
+import { createStore } from 'redux';
+import reducer from './reducers';
 
-const initialState = {
-  posts: []
-};
-
-postReducer(initialState, createPost('hiya'));
+export default createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);

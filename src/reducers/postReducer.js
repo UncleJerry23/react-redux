@@ -1,9 +1,3 @@
-import { createStore } from 'redux';
-import {
-  createPost,
-  deletePost
-} from '../actions/postActions';
-
 const initialState = {
   posts: []
 };
@@ -18,11 +12,3 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 }
-
-const store = createStore(reducer);
-
-store.dispatch(createPost('thing about a thing'));
-console.log('after post', store.getState());
-
-store.dispatch(deletePost('thing about a thing'));
-console.log('after delete post', store.getState());
