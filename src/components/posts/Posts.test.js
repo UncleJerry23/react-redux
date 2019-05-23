@@ -10,7 +10,7 @@ describe('Posts component', () => {
       { title: 'title3', postBody: 'things things' },
       { title: 'title4', postBody: 'about' }
     ];
-    const wrapper = shallow(<Posts postArr={postArr}/>);
+    const wrapper = shallow(<Posts posts={postArr}/>);
     expect(wrapper).toMatchSnapshot();
   });
 });

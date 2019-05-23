@@ -2,7 +2,9 @@
 
 exports[`Posts component renders a Posts 1`] = `
 <ul>
-  <li>
+  <li
+    key="title1-0"
+  >
     <Post
       post={
         Object {
@@ -12,7 +14,9 @@ exports[`Posts component renders a Posts 1`] = `
       }
     />
   </li>
-  <li>
+  <li
+    key="title2-1"
+  >
     <Post
       post={
         Object {
@@ -22,7 +26,9 @@ exports[`Posts component renders a Posts 1`] = `
       }
     />
   </li>
-  <li>
+  <li
+    key="title3-2"
+  >
     <Post
       post={
         Object {
@@ -32,7 +38,9 @@ exports[`Posts component renders a Posts 1`] = `
       }
     />
   </li>
-  <li>
+  <li
+    key="title4-3"
+  >
     <Post
       post={
         Object {
