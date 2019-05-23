@@ -1,13 +1,11 @@
-const initialState = {
-  posts: []
-};
+const initialState = [];
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case 'CREATE_POST':
-      return { state: { posts: [...initialState.posts, action.payload] } };
+      return [...state, action.payload];
     case 'DELETE_POST':
-      return { state: { posts: [...initialState.posts].filter(post => post.title !== action.payload.title) } };
+      return [...state].filter(post => post.title !== action.payload.title);
     default:
       return state;
   }
