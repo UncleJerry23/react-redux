@@ -23,6 +23,6 @@ describe('post selectors', () => {
       ]
     };
 
-    expect(getPost(state, 'mypost')).toEqual({ postBody: 'bla bla bla?', title: 'mypost' });
+    expect(getPost(state, 0)).toEqual({ postBody: 'bla bla bla?', title: 'mypost' });
   });
 });
