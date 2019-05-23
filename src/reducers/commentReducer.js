@@ -1,9 +1,3 @@
-// import { createStore } from 'redux';
-// import {
-//   createComment,
-//   deleteComment
-// } from '../actions/commentActions';
-
 const initialState = {
   comments: []
 };
