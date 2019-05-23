@@ -11,9 +11,9 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case 'CREATE_POST':
-      return { state: [...initialState.posts, action.payload] };
+      return { state: { posts: [...initialState.posts, action.payload] } };
     case 'DELETE_POST':
-      return { state: [...initialState.posts].filter(post => post !== action.payload) };
+      return { state: { posts: [...initialState.posts].filter(post => post !== action.payload) } };
     default:
       return state;
   }
