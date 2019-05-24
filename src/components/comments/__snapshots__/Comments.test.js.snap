@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments component renders a Comments 1`] = `
+<ul>
+  <li
+    key="title of my comment-0"
+  >
+    <Comment
+      comment={
+        Object {
+          "comment": "this is my comment",
+          "title": "title of my comment",
+        }
+      }
+    />
+  </li>
+  <li
+    key="by me-1"
+  >
+    <Comment
+      comment={
+        Object {
+          "comment": "this is me comment",
+          "title": "by me",
+        }
+      }
+    />
+  </li>
+  <li
+    key="by you-2"
+  >
+    <Comment
+      comment={
+        Object {
+          "comment": "this you comment",
+          "title": "by you",
+        }
+      }
+    />
+  </li>
+</ul>
+`;

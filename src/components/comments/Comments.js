@@ -6,7 +6,7 @@ function Comments({ comments }) {
   const commentList = comments.map((comment, i) => (
 
     <li key={`${comment.title}-${i}`}>
-      <Comment post={comment} />
+      <Comment comment={comment} />
     </li>
   ));
 

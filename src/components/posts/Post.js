@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 
 function Post({ post }) {
-  console.log(post.id);
   return (
     <Link to={`/post/${post.id}`}>
       <h3>{post.title}</h3>
