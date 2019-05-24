@@ -11,8 +11,8 @@ describe('post reducer', () => {
 
     expect(postReducer(initialState, createPost('bla', 'myFirstPost'))).toEqual([
       {
-        postBody: 'bla',
-        title: 'myFirstPost'
+        postBody: 'myFirstPost',
+        title: 'bla'
       }
     ]
     );
