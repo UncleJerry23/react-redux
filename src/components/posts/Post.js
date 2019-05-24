@@ -7,7 +7,7 @@ import {
 function Post({ post }) {
   console.log(post.id);
   return (
-    <Link to={`/post/id=${post.id}`}>
+    <Link to={`/post/${post.id}`}>
       <h3>{post.title}</h3>
     </Link>
   );
