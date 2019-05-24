@@ -1,11 +1,19 @@
-// import { connect } from 'react-redux';
-// import PostDetail from '../../components/posts/PostDetail';
-// import { getPost } from '../../selectors/postSelectors';
+import { connect } from 'react-redux';
+import Comments from '../../components/comments/Comments';
+import { getComments } from '../../selectors/commentSelectors';
+// import { deleteComment } from '../../actions/commentActions';
 
-// const mapStateToProps = (state, props) => ({
-//   post: getPost(state, props.match.params.id)
+const mapStateToProps = (state, { postId }) => ({
+  comments: getComments(state, postId)
+});
+
+// const mapDispatchToProps = (dispatch, { postId }) => ({
+//   deleteComment(commentId) {
+//     dispatch(deleteComment(postId, commentId));
+//   }
 // });
 
-// export default connect(
-//   mapStateToProps
-// )(PostDetail);
+export default connect(
+  mapStateToProps,
+  // mapDispatchToProps
+)(Comments);

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-// import CommentsByPostId from '../../containers/comments/CommentsByPostId';
+import CommentsByPostId from '../../containers/comments/CommentsByPostId';
 import CreateComment from '../../containers/comments/CreateComment';
 
 function PostDetail({ post }) {
@@ -12,8 +12,8 @@ function PostDetail({ post }) {
     <section>
       <h1>{post.title}</h1>
       {paras}
-      {/* <CommentsByPostId postId={post.id} /> */}
       <CreateComment postId={post.id} />
+      <CommentsByPostId postId={post.id} />
     </section>
   );
 }
