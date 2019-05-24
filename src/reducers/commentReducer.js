@@ -11,7 +11,14 @@ export default function reducer(state = initialState, action) {
         ]
       };
     case 'DELETE_COMMENT':
-      return [...state].filter(comment => comment.title !== action.payload.title);
+      console.log('hi');
+      return {
+        ...state,
+        [action.payload.postId]: [
+          ...state[action.payload.postId].slice(0, action.payload.commentId),
+          ...state[action.payload.postId].slice(action.payload.commentId + 1),
+        ]
+      };
     default:
       return state;
   }

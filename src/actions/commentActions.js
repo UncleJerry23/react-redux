@@ -10,9 +10,9 @@ const createComment = (postId, commentTitle, comment) => ({
   }
 });
 
-const deleteComment = commentTitle => ({
+const deleteComment = (postId, commentId) => ({
   type: DELETE_COMMENT,
-  payload: commentTitle
+  payload: { postId, commentId }
 });
 
 export {

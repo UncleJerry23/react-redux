@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from './Comment';
 
-function Comments({ comments }) {
+function Comments({ comments, deleteComment }) {
   const commentList = comments.map((comment, i) => (
 
     <li key={`${comment.title}-${i}`}>
-      <Comment comment={comment} />
+      <Comment comment={comment} deleteComment={deleteComment} id={i} />
     </li>
   ));
 
@@ -18,7 +18,8 @@ function Comments({ comments }) {
 }
 
 Comments.propTypes = {
-  comments: PropTypes.array.isRequired
+  comments: PropTypes.array.isRequired,
+  deleteComment: PropTypes.func.isRequired
 };
 
 export default Comments;
