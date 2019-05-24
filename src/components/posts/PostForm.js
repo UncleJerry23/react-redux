@@ -27,11 +27,34 @@ export default class PostForm extends PureComponent {
     render() {
       const { title, postBody } = this.state;
 
+      const formStyle = {
+        display: 'flex',
+        flexDirection: 'column'
+      };
+
+      const inputStyle = {
+        width: '80px',
+        textAlign: 'center',
+        margin: '10px'
+      };
+
+      const textAreaStyle = {
+        margin: '10px',
+        width: '300px',
+        height: '100px'
+      };
+
+      const bottonStyle = {
+        margin: '10px',
+        width: '60px',
+        textAlign: 'center'
+      };
+
       return (
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="title" value={title} onChange={this.handleChange} />
-          <textarea name="postBody" value={postBody} onChange={this.handleChange} /> 
-          <button>SUBMIT</button>
+        <form style={formStyle} onSubmit={this.handleSubmit}>
+          <input style={inputStyle} type="text" name="title" value={title} placeholder="Post Title" onChange={this.handleChange}></input>
+          <textarea style={textAreaStyle} name="postBody" value={postBody} placeholder="Post Body" onChange={this.handleChange} /> 
+          <button style={bottonStyle}>SUBMIT</button>
         </form>
       );
     }

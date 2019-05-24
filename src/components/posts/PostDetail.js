@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // import CreateComment from '../../containers/comments/CreateComment';
 
 function PostDetail({ post }) {
-  const paras = post.body.split('\n').map((p, i) => (
+  const paras = post.postBody.split('\n').map((p, i) => (
     <p key={i}>{p}</p>
   ));
   return (
@@ -21,7 +21,7 @@ function PostDetail({ post }) {
 PostDetail.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired
+    postBody: PropTypes.string.isRequired
   }).isRequired
 };
 
