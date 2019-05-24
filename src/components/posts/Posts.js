@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Post from './Post';
 
-function Posts({ posts }) {
+function Posts({ posts, deletePost }) {
   const postList = posts.map((post, i) => (
 
     <li key={`${post.title}-${i}`}>
-      <Post post={post} />
+      <Post post={post} deletePost={deletePost}/>
     </li>
   ));
 
@@ -18,7 +18,8 @@ function Posts({ posts }) {
 }
 
 Posts.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array.isRequired,
+  deletePost: PropTypes.func.isRequired
 };
 
 export default Posts;
