@@ -1,1 +1,1 @@
-export const getComments = (state, title) => state.comments.find(comment => comment.commentTitle === title) || [];
+export const getComments = (state, id) => state.comments[id] || [];

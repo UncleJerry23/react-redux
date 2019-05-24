@@ -1,12 +1,12 @@
 const CREATE_COMMENT = 'CREATE_COMMENT';
 const DELETE_COMMENT = 'DELETE_COMMENT';
 
-const createComment = ({ postTitle, commentTitle, comment }) => ({
+const createComment = (postId, commentTitle, comment) => ({
   type: CREATE_COMMENT,
   payload: {
-    postTitle: postTitle,
-    commentTitle: commentTitle,
-    comment: comment
+    postId: postId,
+    title: commentTitle,
+    body: comment
   }
 });
 

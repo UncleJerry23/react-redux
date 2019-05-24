@@ -1,13 +1,17 @@
-const initialState = {
-  comments: []
-};
+const initialState = {};
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case 'CREATE_COMMENT':
-      return { state: { comments: [...initialState.comments, action.payload] } };
+      return {
+        ...state,
+        [action.payload.postId]: [
+          ...(state[action.payload.postId] || []),
+          { title: action.payload.title, body: action.payload.body }
+        ]
+      };
     case 'DELETE_COMMENT':
-      return { state: { comments: [...initialState.comments].filter(comment => comment.title !== action.payload.title) } };
+      return [...state].filter(comment => comment.title !== action.payload.title);
     default:
       return state;
   }
