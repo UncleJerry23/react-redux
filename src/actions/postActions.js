@@ -1,7 +1,7 @@
 const CREATE_POST = 'CREATE_POST';
 const DELETE_POST = 'DELETE_POST';
 
-const createPost = (post, title) => ({
+const createPost = (title, post) => ({
   type: CREATE_POST,
   payload: {
     postBody: post,

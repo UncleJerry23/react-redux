@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import CreatePost from '../containers/posts/CreatePost';
+import PostById from '../containers/posts/PostById';
 import Home from './Home';
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/posts/:id" component={CreatePost} />
+        <Route path="/post/:id" component={PostById} />
       </Switch>
     </Router>
   );

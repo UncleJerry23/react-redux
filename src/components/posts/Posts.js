@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Post from './Post';
 
-
 function Posts({ posts }) {
   const postList = posts.map((post, i) => (
 
