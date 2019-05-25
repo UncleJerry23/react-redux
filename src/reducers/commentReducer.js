@@ -11,7 +11,6 @@ export default function reducer(state = initialState, action) {
         ]
       };
     case 'DELETE_COMMENT':
-      console.log('hi');
       return {
         ...state,
         [action.payload.postId]: [

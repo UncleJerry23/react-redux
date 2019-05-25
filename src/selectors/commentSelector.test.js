@@ -21,7 +21,7 @@ describe('comment selector', () => {
       ]
     };
 
-    expect(getComments(state, 'myComment')).toEqual({ 
+    expect(getComments(state, 0)).toEqual({ 
       postTitle: 'mypost', 
       commentTitle: 'myComment', 
       comment: 'great post' 

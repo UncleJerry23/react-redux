@@ -1,50 +1,48 @@
 import commentReducer from './commentReducer';
-import {
-  createComment,
-  deleteComment
-} from '../actions/commentActions';
 
 describe('comment reducer', () => {
   it('creates a comment', () => {
-    const initialState = {
-      comments: []
+    const initialState = {};
+
+    const action = { 
+      type: 'CREATE_COMMENT',
+      payload: {
+        postId: '0', 
+        title: 'myComment', 
+        body: 'great post' 
+      }
     };
 
-    const action = createComment({ 
-      postTitle: 'myPost', 
-      commentTitle: 'myComment', 
-      comment: 'great post' 
-    });
-
-    expect(commentReducer(initialState, action)).toEqual({
-      state: {
-        comments: [{
-          comment: 'great post', 
-          commentTitle: 'myComment', 
-          postTitle: 'myPost'
-        }]
-      }
+    expect(commentReducer(initialState, action)).toEqual({ 
+      0: [ 
+        { 
+          title: 'myComment', 
+          body: 'great post' 
+        } 
+      ] 
     });
   });
+
   it('deletes a comment', () => {
     const initialState = {
-      comments: [
+      0: [ 
         { 
-          postTitle: 'myPost', 
-          commentTitle: 'myComment', 
-          comment: 'great post' 
-        }
+          title: 'myComment', 
+          body: 'great post' 
+        } 
       ]
     };
 
-    const action = deleteComment({ 
-      commentTitle: 'myComment'
-    });
+    const action = { 
+      type: 'DELETE_COMMENT',
+      payload: {
+        postId: '0',
+        commentId: '0'
+      }
+    };
 
     expect(commentReducer(initialState, action)).toEqual({
-      state: {
-        comments: []
-      }
+      0: []
     });
   });
 });

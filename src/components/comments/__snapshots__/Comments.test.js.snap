@@ -12,6 +12,7 @@ exports[`Comments component renders a Comments 1`] = `
           "title": "title of my comment",
         }
       }
+      id={0}
     />
   </li>
   <li
@@ -24,6 +25,7 @@ exports[`Comments component renders a Comments 1`] = `
           "title": "by me",
         }
       }
+      id={1}
     />
   </li>
   <li
@@ -36,6 +38,7 @@ exports[`Comments component renders a Comments 1`] = `
           "title": "by you",
         }
       }
+      id={2}
     />
   </li>
 </ul>

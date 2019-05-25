@@ -7,5 +7,8 @@ exports[`Post component renders a Post 1`] = `
   <h3>
     myPost
   </h3>
+  <button>
+    Delete
+  </button>
 </Link>
 `;
